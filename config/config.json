@@ -1,0 +1,32 @@
+{
+  "max_open_trades": 2,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "dry_run": true,
+  "dry_run_wallet": 1000,
+  "timeframe": "5m",
+  "tradable_balance_ratio": 0.95,
+  "cancel_open_orders_on_exit": true,
+
+  "exchange": {
+    "name": "binance",
+    "key": "${EXCHANGE_KEY}",
+    "secret": "${EXCHANGE_SECRET}",
+    "ccxt_config": { "enableRateLimit": true },
+    "ccxt_async_config": { "enableRateLimit": true },
+    "pair_whitelist": ["BTC/USDT", "ETH/USDT"],
+    "pair_blacklist": []
+  },
+
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": true
+  },
+
+  "bot_name": "otomic-algorithm",
+  "initial_state": "running",
+  "process_throttle_secs": 5
+}

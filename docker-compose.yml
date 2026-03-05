@@ -1,0 +1,52 @@
+services:
+  kraken:
+    image: otomic-algo:local
+    container_name: otomic_algo_kraken
+    ports:
+      - "8080:8080"
+    environment:
+      FT_CONFIG: /freqtrade/config/kraken.json
+      FT_STRATEGY: GridSimple
+      DISABLE_TRADING: "1"
+    restart: unless-stopped
+    volumes:
+      - ./config:/freqtrade/config:ro
+
+  coinbase:
+    image: otomic-algo:local
+    container_name: otomic_algo_coinbase
+    ports:
+      - "8081:8080"
+    environment:
+      FT_CONFIG: /freqtrade/config/coinbase.json
+      FT_STRATEGY: CtaTrend
+      DISABLE_TRADING: "1"
+    restart: unless-stopped
+    volumes:
+      - ./config:/freqtrade/config:ro
+
+  bybit:
+    image: otomic-algo:local
+    container_name: otomic_algo_bybit
+    ports:
+      - "8082:8080"
+    environment:
+      FT_CONFIG: /freqtrade/config/bybit.json
+      FT_STRATEGY: BollingerMR
+      DISABLE_TRADING: "1"
+    restart: unless-stopped
+    volumes:
+      - ./config:/freqtrade/config:ro
+
+  bitstamp:
+    image: otomic-algo:local
+    container_name: otomic_algo_bitstamp
+    ports:
+      - "8083:8080"
+    environment:
+      FT_CONFIG: /freqtrade/config/bitstamp.json
+      FT_STRATEGY: RsiMeanReversion
+      DISABLE_TRADING: "1"
+    restart: unless-stopped
+    volumes:
+      - ./config:/freqtrade/config:ro

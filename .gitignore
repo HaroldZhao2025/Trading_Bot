@@ -1,0 +1,11 @@
+data/
+*.sqlite
+*.sqlite-journal
+*.db
+*.log
+*.jsonl
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
