@@ -1,4 +1,3 @@
-````md
 # Trading_Bot (Olares-ready Algorithm)
 
 This repo packages a **Freqtrade-based trading engine** as an “Algorithm” runtime (containerized) and ships a **strategy pack** + **multi-exchange configs**.  
