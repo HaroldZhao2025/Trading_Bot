@@ -18,6 +18,18 @@ if [[ "$CMD" == "arb-scan" ]]; then
   exec python -m olares.main arb-scan
 fi
 
+if [[ "$CMD" == "dex-scan" ]]; then
+  exec python -m olares.main dex-scan
+fi
+
+if [[ "$CMD" == "hl-paper" ]]; then
+  exec python -m olares.main hl-paper
+fi
+
+if [[ "$CMD" == "validate-dex" ]]; then
+  exec python -m olares.main validate-dex
+fi
+
 if [[ "${DISABLE_TRADING:-0}" == "1" ]]; then
   echo "DISABLE_TRADING=1 -> forcing dry_run"
   exec python -m freqtrade.main "$CMD" -c "$CONFIG" -s "$STRATEGY" --dry-run
